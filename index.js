@@ -26,7 +26,21 @@ function removeArrayMember(array) {
 }
 
 
-//set insert a member without empty slot
+/* 
+set insert a member without empty slot
+
+const proxy = insertArrayMember([]);
+proxy[0] = 0;
+proxy[100] = 100;
+
+proxy object:
+...
+[[Target]]:Array[2]
+0:0
+1:100
+length:2
+*/
+
 function insertArrayMember(array) {
 	if (!Array.isArray(array)) {
 		throw new TypeError('Expected an array');
